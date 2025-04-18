@@ -1,131 +1,129 @@
 # Insurance Claim Report
 
-This project provides a comprehensive SQL-based analysis and reporting solution for insurance claim data. It is designed to deliver key business insights and visualizations for portfolio or BI presentations.
+A Business Intelligence (BI) project for analyzing and visualizing insurance claim data using SQL and open-source datasets. This repository is designed for those interested in data analysis, reporting, and presentation of actionable business insights.
 
-## Project Overview
+---
 
-- **Goal:** Analyze insurance claims data to extract actionable insights, summary statistics, and present them visually for business intelligence (BI) purposes.
+## 📊 Project Overview
+
+- **Goal:** Extract, analyze, and visualize key insights from insurance claim data for business reporting and decision-making.
 - **Data Source:** [openml.org dataset 41214](https://www.openml.org/search?type=data&sort=runs&id=41214&status=active)
-- **Technologies:** Microsoft SQL Server (T-SQL), SQL scripts
+- **Technologies:** Microsoft SQL Server (T-SQL), BI tools (Power BI/Excel), open data.
 
-## Key Features
+---
 
-- Summary statistics and data cleaning for insurance claims
-- Visualizations and report queries for:
-  - Total claims
-  - Total policies
-  - Average exposure
-  - Average Bonus/Malus scores
-  - Claims by region
-  - Claims per policy by area
-  - Claims by fuel type
-  - Claims by vehicle brand
-  - Claims by driver age group
-- Example stored procedures and views for flexible querying
-- Indexing for performance optimization
-- **Custom wallpaper/theme included** for report visuals, enhancing professional presentation
-- **Exported PDF output attached** for ready portfolio usage
+## ✨ Key Features
 
-## Repository Structure
+- **Data Cleaning & Preparation:** Scripts for handling duplicates, missing values, and data standardization.
+- **Summary & Analytics:** Pre-built queries for:
+  - Total claims and total policies
+  - Average exposure and Bonus/Malus
+  - Claims breakdown by region, area, vehicle brand, fuel type, and driver age group
+- **BI-ready Outputs:** The SQL results are ready for direct use in Power BI, Excel, or other visualization tools.
+- **Custom Visual Theme:** Includes a custom wallpaper/theme for report visuals.
+- **Exported Reports:** Sample exported PDF output is attached for portfolio/demo use.
 
-- `SQLQuery1.sql` — Main SQL script for database setup, data cleaning, and analytics queries
-- `report_wallpaper.png` (or similar) — Custom wallpaper/theme used in report visuals
-- `InsuranceClaimReport.pdf` — Exported sample output/report in PDF format
+---
 
-## Setup & Usage
+## 📂 Repository Structure
+
+- `schema.sql` — Database and table creation scripts
+- `etl.sql` — Data cleaning and transformation scripts
+- `analysis.sql` — Core analytical queries and summary statistics
+- `views_procedures.sql` — Views and stored procedures for reusable insights
+- `report_wallpaper.png` — Custom wallpaper/theme for the BI report
+- `InsuranceClaimReport.pdf` — Exported sample report (PDF)
+- `README.md` — Project documentation
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Microsoft SQL Server (or compatible T-SQL environment)
-- Access to the openml dataset ([download link](https://www.openml.org/search?type=data&sort=runs&id=41214&status=active))
+- Access to [openml dataset 41214](https://www.openml.org/search?type=data&sort=runs&id=41214&status=active)
+- (Optional) Power BI or Excel for creating visuals
 
-### Steps
+### Setup Steps
 
-1. **Create the Database & Table**
-
-   Run the initial setup statements in `SQLQuery1.sql` to create `InsuranceClaimsDB` and the `InsuranceClaims` table.
+1. **Set Up the Database**
+   - Run `schema.sql` in your SQL Server to create the necessary database and tables.
 
 2. **Import Data**
+   - Download the CSV from OpenML.
+   - Import the data into the `InsuranceClaims` table using SQL Server Management Studio (SSMS) or a bulk import tool.
 
-   Import the dataset (CSV) into the `InsuranceClaims` table using SQL Server Management Studio (SSMS) or a bulk import utility.
+3. **Clean & Prepare Data**
+   - Execute `etl.sql` to remove duplicates, handle NULLs, and standardize fields.
 
-3. **Run Cleaning and Analysis Scripts**
+4. **Run Analyses**
+   - Use the queries in `analysis.sql` for generating insights and summary statistics.
 
-   Execute the rest of the script to:
-   - Clean and standardize the data
-   - Remove duplicates and handle missing values
-   - Generate summary statistics and key aggregation queries
+5. **Reusable Components**
+   - Optional: Run `views_procedures.sql` to create views and stored procedures.
 
-4. **Generating Visuals**
+6. **Visualize**
+   - Use your BI tool of choice to visualize the results.
+   - Apply the included `report_wallpaper.png` for a professional look.
+   - Reference the sample `InsuranceClaimReport.pdf` for expected output.
 
-   Use the output of the summary queries to create visuals in your BI tool of choice (Power BI, Tableau, Excel, etc.).
-   - Apply the included custom wallpaper/theme for a polished and personalized look.
-   - Reference the sample exported PDF for expected output and style.
+---
 
-### Example Queries
+## 🔎 Example Queries
 
-- Total claims per region:
+- **Total Claims per Region:**
   ```sql
   SELECT Region, SUM(ClaimNb) AS TotalClaims
   FROM InsuranceClaims
   GROUP BY Region
   ORDER BY TotalClaims DESC;
   ```
-- Average claims by vehicle brand:
+- **Average Claims by Vehicle Brand:**
   ```sql
   SELECT VehBrand, AVG(ClaimNb) AS AvgClaims
   FROM InsuranceClaims
   GROUP BY VehBrand
   ORDER BY AvgClaims DESC;
   ```
-- Claims by driver age group, area, and fuel type are similarly available via included queries.
 
-### Stored Procedures
-
-- Use `sp_BrandClaimsByRegion` to get brand-wise claims for a specific region:
-  ```sql
-  EXEC sp_BrandClaimsByRegion 'Picardie';
-  ```
-
-## Expected Output & Sample Results
-
-You can expect output tables such as:
-
-- **Total Claims by Region**
-  | Region    | TotalClaims |
-  |-----------|-------------|
-  | Picardie  | 1200        |
-  | Normandie | 900         |
-  | ...       | ...         |
-
-- **Claims by Vehicle Brand**
-  | VehBrand  | AvgClaims   |
-  |-----------|-------------|
-  | Renault   | 2.1         |
-  | Peugeot   | 1.8         |
-  | ...       | ...         |
-
-- **Distribution of Fuel Types**
-  | VehGas    | NumPolicies |
-  |-----------|-------------|
-  | Gasoline  | 3500        |
-  | Diesel    | 1500        |
-
-Use these tables to create visuals for your BI presentation.  
-For visual style and sample, see the attached PDF export and included wallpaper/theme.
-
-## Portfolio Value
-
-This project demonstrates:
-- Advanced SQL for data analysis and transformation
-- BI reporting skills
-- Data cleaning and preparation
-- Real-world business questions addressed using open data
-- Professional report presentation with custom design elements
+For more, see the `analysis.sql` file.
 
 ---
+
+## 🖼️ Visuals & Output
+
+- ![Report Visual Theme](report_wallpaper.png)
+- [Download Sample PDF Report](./InsuranceClaimReport.pdf)
+
+Typical output tables:
+| Region    | TotalClaims |
+|-----------|-------------|
+| Picardie  | 1200        |
+| Normandie | 900         |
+
+*See the attached PDF for a full BI report example.*
+
+---
+
+## 🏆 Portfolio Value
+
+- Demonstrates advanced SQL and analytics skills
+- Shows BI report design and custom theming
+- Uses open, real-world data for business scenarios
+- Exportable, professional BI deliverables
+
+---
+
+## 📬 Contact
 
 **Author:** [tushardhawale123](https://github.com/tushardhawale123)  
 **Data Source:** [openml.org dataset 41214](https://www.openml.org/search?type=data&sort=runs&id=41214&status=active)
 
-Feel free to contact me for more information or collaboration opportunities!
+Feel free to reach out for collaboration or questions!
+
+---
+
+## 📄 License
+
+This project is for educational and demonstration purposes. Please credit the author and OpenML if sharing or reusing components.
