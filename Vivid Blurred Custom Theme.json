@@ -1,0 +1,84 @@
+{
+  "name": "Vivid Blurred Custom Theme",
+  "dataColors": [
+    "#2EC4B6",  
+    "#FF6B6B",  
+    "#FFD166",  
+    "#4361EE",  
+    "#6D62FE",  
+    "#33C1FF",  
+    "#FFB4D9",  
+    "#00B894"   
+  ],
+  "background": "#181A20",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#2EC4B6",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "solid": {
+              "color": "#F5F6FA80"
+            }
+          }
+        ],
+        "border": [
+          {
+            "solid": {
+              "color": "#FFFFFF20"
+            }
+          }
+        ],
+        "fontFamily": [
+          {
+            "fontFamily": "Segoe UI, Arial, sans-serif"
+          }
+        ],
+        "color": [
+          {
+            "solid": {
+              "color": "#FFFFFF"
+            }
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "background": [
+          {
+            "solid": {
+              "color": "#181A2030"
+            }
+          }
+        ],
+        "fontColor": [
+          {
+            "solid": {
+              "color": "#FFFFFF"
+            }
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [
+          {
+            "solid": {
+              "color": "#181A2050"
+            }
+          }
+        ],
+        "fontColor": [
+          {
+            "solid": {
+              "color": "#FFFFFF"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
