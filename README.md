@@ -93,7 +93,7 @@ For more, see the `analysis.sql` file.
 
 ## 🖼️ Visuals & Output
 
-- ![Report Visual Theme](report_wallpaper.png)
+- ![Report Visual Theme](VehicleInsuranceTheme.json)
 - [Download Sample PDF Report](./InsuranceClaimReport.pdf)
 
 Typical output tables:
