@@ -23,10 +23,14 @@ This project provides a comprehensive SQL-based analysis and reporting solution 
   - Claims by driver age group
 - Example stored procedures and views for flexible querying
 - Indexing for performance optimization
+- **Custom wallpaper/theme included** for report visuals, enhancing professional presentation
+- **Exported PDF output attached** for ready portfolio usage
 
 ## Repository Structure
 
 - `SQLQuery1.sql` — Main SQL script for database setup, data cleaning, and analytics queries
+- `report_wallpaper.png` (or similar) — Custom wallpaper/theme used in report visuals
+- `InsuranceClaimReport.pdf` — Exported sample output/report in PDF format
 
 ## Setup & Usage
 
@@ -54,7 +58,9 @@ This project provides a comprehensive SQL-based analysis and reporting solution 
 
 4. **Generating Visuals**
 
-   Use the output of the summary queries to create visuals in your BI tool of choice (Power BI, Tableau, Excel, etc.). Sample output tables can be directly visualized or exported.
+   Use the output of the summary queries to create visuals in your BI tool of choice (Power BI, Tableau, Excel, etc.).
+   - Apply the included custom wallpaper/theme for a polished and personalized look.
+   - Reference the sample exported PDF for expected output and style.
 
 ### Example Queries
 
@@ -105,7 +111,8 @@ You can expect output tables such as:
   | Gasoline  | 3500        |
   | Diesel    | 1500        |
 
-Use these tables to create visuals for your BI presentation.
+Use these tables to create visuals for your BI presentation.  
+For visual style and sample, see the attached PDF export and included wallpaper/theme.
 
 ## Portfolio Value
 
@@ -114,6 +121,7 @@ This project demonstrates:
 - BI reporting skills
 - Data cleaning and preparation
 - Real-world business questions addressed using open data
+- Professional report presentation with custom design elements
 
 ---
 
